@@ -41,8 +41,10 @@ test_duplicate_key(void)
     ht_t *ht = ht_create(4);
     int v1 = 1, v2 = 2;
     TEST_CHECK(ht_put(ht, "x", 1, &v1) == 0);
+    TEST_CHECK(*(int *)ht_get(ht, "x", 1) == v1);
+
     TEST_CHECK(ht_put(ht, "x", 1, &v2) == 1);
-    TEST_CHECK(*(int *)ht_get(ht, "x", 1) == 1);
+    TEST_CHECK(*(int *)ht_get(ht, "x", 1) == v2);
     ht_destroy(ht);
 }
 

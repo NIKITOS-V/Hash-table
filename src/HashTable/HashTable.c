@@ -33,6 +33,7 @@ typedef struct {
 
 /* ------ Построение хеш-таблицы ------ */
 
+// Пересоздать содержимое массива AVL деревьев
 static bool rebuild_forest(Array(AVLTree)* forest, size_t size) {
 	if (!rebuild_array(AVLTree)(forest, size)) {
 		return false;
@@ -69,6 +70,8 @@ static size_t calc_obj_pos(
 
 /* ------ Вставка в хеш-таблицу ------ */
 
+// Собрать блоки данных из AVL деревьев старого массива
+// и добавить в новый массив
 static void collect_DataBlocks(
 	const void* key,
 	size_t key_size,
@@ -88,6 +91,8 @@ static void collect_DataBlocks(
 	f_data->except_was = !append_to_AVLTree(&get_from_array(new_forest, obj_pos), &data_block);
 }
 
+// Увеличить размер массива AVL деревьев путем создания нового массива
+// и с последующим его заполнением имеющимися данными
 static bool realloc_forest(Array(AVLTree)* forest) {
 	Array(AVLTree) new_forest;
 
@@ -121,6 +126,7 @@ static bool realloc_forest(Array(AVLTree)* forest) {
 	return true;
 }
 
+// Копировать объект, исполняющий роль ключа
 void* copy_key(const void* key, size_t key_size) {
 	void* key_copy = malloc(key_size);
 

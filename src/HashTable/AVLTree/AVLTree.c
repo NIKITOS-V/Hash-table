@@ -216,6 +216,8 @@ static AVLNode* delete_AVLNode_from_AVLTree(
 		AVLNode* left = subroot->left;
 		AVLNode* right = subroot->right;
 
+		*remove_was = true;
+
 		delete_AVLNode(subroot, destructor);
 
 		if (is_node_null(right)) {
@@ -226,8 +228,6 @@ static AVLNode* delete_AVLNode_from_AVLTree(
 
 		min_node->right = remove_min_AVLNode(right);
 		min_node->left = left;
-
-		*remove_was = true;
 
 		return balance_tree(min_node);
 	}
@@ -285,7 +285,7 @@ bool delete_from_AVLTree(
 	size_t key_size,
 	DataBlock_destructor* destructor
 ) {
-	bool remove_was;
+	bool remove_was = false;
 
 	tree->root = delete_AVLNode_from_AVLTree(
 		tree->root, key, key_size, destructor, &remove_was

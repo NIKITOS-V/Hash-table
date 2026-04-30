@@ -1,6 +1,8 @@
 #ifndef __DECLARE_AVL_TREE_H__
 #define __DECLARE_AVL_TREE_H__
 
+#include <stddef.h>
+
 #include "declare_DataBlock.h"
 
 typedef struct AVLTree AVLTree;

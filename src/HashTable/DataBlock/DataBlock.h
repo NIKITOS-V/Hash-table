@@ -2,6 +2,7 @@
 #define __DATA_BLOCK_H__
 
 #include <stdbool.h>
+#include <stddef.h>
 
 #include "declare_DataBlock.h"
 

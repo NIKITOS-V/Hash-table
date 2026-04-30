@@ -22,11 +22,11 @@ struct AVLNode {
 };
 
 // Строитель статического AVL узла
-#define to_AVLNode(_data_block, _left_idx, _right_idx, _height)\
+#define to_AVLNode(_data_block, _left, _right, _height)\
 ( (AVLNode) {\
 	.data_block = (_data_block),\
-	.left_idx = (size_t) (_left_idx),\
-	.right_idx = (size_t) (_right_idx),\
+	.left_idx = (_left_idx),\
+	.right_idx = (_right_idx),\
 	.height = (int64_t) (_height)\
 })
 

@@ -24,6 +24,8 @@ include_directories (
 
 add_executable (Hash_table
 	#src/main.c
+	#${LOCAL_TESTS_SOURCES}
+
 	${COMMON_SOURCES}
   	${ARRAY_AVL_TREES_SOURCES}
   	${AVL_NODE_SOURCES}
@@ -31,11 +33,10 @@ add_executable (Hash_table
   	${DATA_BLOCK_SOURCES}
 	${HASH_FUNCTIONS_SOURCES}
   	${HASH_TABLE_SOURCES}
-	${LOCAL_TESTS_SOURCES}
 	${TEST_SOURCES}
 )
 
-include (Warnings.cmake)
+#include (Warnings.cmake)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET Hash_table PROPERTY C_STANDARD 99)

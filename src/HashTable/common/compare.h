@@ -2,6 +2,7 @@
 #define __COMPARE_H__
 
 #include <stdint.h>
+#include <stddef.h>
 
 #define GREAT_CMP_CODE 1
 #define EQUAL_CMP_CODE 0

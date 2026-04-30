@@ -1,6 +1,6 @@
 #include "local_tests.h"
 
-static const int (*tests[NUM_TESTS])(void);
+static int (*tests[NUM_TESTS])(void);
 
 void init_tests(void) {
 	tests[AVL_TREE_SMALL_APPEND_TEST] = AVLTree_small_append_test;

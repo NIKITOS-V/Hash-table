@@ -17,7 +17,7 @@
 /* ------ Проверки ------ */
 
 static bool is_node_null(AVLNode* node) {
-	return node == NULL;
+	return !node;
 }
 
 /* ------ Геттеры ------ */

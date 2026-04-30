@@ -76,8 +76,10 @@ static void collect_DataBlocks(
 	const void* key,
 	size_t key_size,
 	void* value,
-	ForeachData* f_data
+	void* data
 ) {
+	ForeachData* f_data = (ForeachData*) data;
+
 	if (f_data->except_was) {
 		return;
 	}

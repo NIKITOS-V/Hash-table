@@ -2,6 +2,7 @@
 #define __AVL_TREE_H__
 
 #include <stdint.h>
+#include <stddef.h>
 #include <stdbool.h>
 
 #include "declare_AVLTree.h"
